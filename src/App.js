@@ -1,23 +1,13 @@
-import logo from './logo.svg';
-import './App.css';
+// import { pets } from "./assets/img/pets-1000x413.png";
+import "./App.css";
+import { findRenderedComponentWithType } from "react-dom/test-utils";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="under-construction" alt="under construction">
+        <h1>hi, I am under construction</h1>
+      </div>
     </div>
   );
 }

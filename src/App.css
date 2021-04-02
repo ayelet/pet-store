@@ -36,3 +36,9 @@
     transform: rotate(360deg);
   }
 }
+
+.under-construction {
+  height: 100vh;
+  background: url(./assets/img/pets-1000x413.png) no-repeat center center/cover;
+  text-align: center;
+}
