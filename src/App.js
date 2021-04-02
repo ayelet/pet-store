@@ -1,6 +1,6 @@
 // import { pets } from "./assets/img/pets-1000x413.png";
 import "./App.css";
-import { findRenderedComponentWithType } from "react-dom/test-utils";
+// import { findRenderedComponentWithType } from "react-dom/test-utils";
 
 function App() {
   return (
