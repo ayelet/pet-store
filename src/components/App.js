@@ -14,11 +14,11 @@ function App() {
       <h1 className="d-block">Fur Real - Whatever your pet needs</h1>
       <Products />
 
-      <footer>
+      {/*<footer>
         <a href="https://www.freepik.com/vectors/food">
           Food vector created by macrovector - www.freepik.com
         </a>
-      </footer>
+     </footer>*/}
     </Container>
   );
 }

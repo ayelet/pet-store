@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import productsList from "../../assets/img/productsDB.js";
 import Product from "../Product/Product";
 import { Button } from "react-bootstrap";
+import Pagination from "../Pagination";
 
 export default function Products() {
   const [products] = useState(productsList);
@@ -31,6 +32,9 @@ export default function Products() {
     setProductsPerPage(productsPerPage);
   };
 
+  const onChangePage = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
   return (
     <div className="container products">
       {currentProducts.map((product) => {
@@ -39,6 +43,11 @@ export default function Products() {
       <Button onClick={onPrevPage}>Prev</Button>
       <Button onClick={onNextPage}>Next</Button>
       <Button onClick={onSetProductsPerPAge}>P</Button>
+      <Pagination
+        itemsPerPage={productsPerPage}
+        totalItemsNumber={products.length}
+        onChangePage={onChangePage}
+      />
     </div>
   );
 }

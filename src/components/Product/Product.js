@@ -1,10 +1,9 @@
 import "./product.css";
-import React  from "react";
+import React from "react";
 import { Card, Button } from "react-bootstrap";
 // import { Button } from "bootstrap";
 
 export default function Product({ details }) {
- 
   //   const [name, setName] = useState("");
   //   const [description, setDescription] = useState("");
   const addToCart = (e) => {
