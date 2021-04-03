@@ -1,6 +1,8 @@
 import React, { useRef } from "react";
 import { Card, Form, Button } from "react-bootstrap";
 // import "bootstrap/dist/css/bootstrap.min.css";
+// import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 
 export default function Signup() {
   const emailRef = useRef();
@@ -32,7 +34,9 @@ export default function Signup() {
                 required
               ></Form.Control>
             </Form.Group>
-            <Button type="submit" className="btn w-100" value="Sign Up" />
+            <Button type="submit" className="btn w-100">
+              Sign Up
+            </Button>
           </Form>
         </Card.Body>
       </Card>
