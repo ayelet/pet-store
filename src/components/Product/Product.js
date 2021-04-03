@@ -1,10 +1,15 @@
 import "./product.css";
-import React from "react";
-import { Card } from "react-bootstrap";
+import React  from "react";
+import { Card, Button } from "react-bootstrap";
+// import { Button } from "bootstrap";
 
 export default function Product({ details }) {
+ 
   //   const [name, setName] = useState("");
   //   const [description, setDescription] = useState("");
+  const addToCart = (e) => {
+    console.log("add to cart handler");
+  };
 
   return (
     <Card className="h-100 shadow-sm bg-white rounded">
@@ -15,6 +20,7 @@ export default function Product({ details }) {
             {details.name}
           </Card.Title>
         </div>
+        <Button onClick={addToCart}>Add To Cart</Button>
       </Card.Body>
     </Card>
   );
