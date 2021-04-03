@@ -1,25 +1,35 @@
+import "./product.css";
 import React from "react";
+import { Card } from "react-bootstrap";
 
-export default function Product() {
+export default function Product({ details }) {
   //   const [name, setName] = useState("");
   //   const [description, setDescription] = useState("");
 
   return (
-    <div className="card" style={{ width: "18rem" }}>
-      this is a product
-    </div>
+    <Card className="h-100 shadow-sm bg-white rounded">
+      <Card.Img variant="top" src={details.imgUrl} />
+      <Card.Body className="d-flex flex-column">
+        <div className="mb-2 d-flex justify-content-between">
+          <Card.Title className="mb-0 font-weight-bold">
+            {details.name}
+          </Card.Title>
+        </div>
+      </Card.Body>
+    </Card>
   );
-}
+  // return (
 
-// ////
-//    <img className="card-img-top" src="..." alt="some text here" />
-//       <div className="card-body">
-//         <h5 className="card-title">Card Title</h5>
-//         <p className="card-text">
-//           Some quick example text to build on the card title and make up the
-//           bulk of the card's content.
-//         </p>
-//         <a href="/#" className="btn btn-primary">
-//           Go somewhere
-//         </a>
-//       </div>
+  //   <div key={props.details.id} class="card" style={{ width: "18rem" }}>
+  //     {/*<img
+  //     class="card-img-top"
+  //     src={props.details.imgUrl}
+  //     alt={`product num. ${props.details.id}`}
+  //   />*/}
+  //     <div class="card-body">
+  //       <h2 class="card-title">{props.details.name}</h2>
+  //       <p class="card-text">{props.details.decription}</p>
+  //     </div>
+  //   </div>
+  // );
+}

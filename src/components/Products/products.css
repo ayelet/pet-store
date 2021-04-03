@@ -1,0 +1,8 @@
+.products {
+  display: grid;
+  height: 100%;
+  /* flex-direction: row; */
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 40px;
+  margin: 10px auto;
+}
