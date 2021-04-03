@@ -1,19 +1,23 @@
 import "./App.css";
-import Signup from "./Signup";
+// import Signup from "./UserLogin/signup";
 import { Container } from "react-bootstrap";
+// import AuthProvider from "./contexts/authContext";
 
 function App() {
   return (
     <Container
-      className="d-flex align-items-center justify-content-center"
+      className="under-construction d-flex flex-column align-items-center justify-content-center"
       style={{ minHeight: "100vh" }}
     >
-      <div className="w-100 under-construction" alt="under construction">
-        <h1>hi, I am under construction</h1>
-        <div className="w-100" style={{ maxWidth: "400px" }}>
-          <Signup />
-        </div>
+      <h1 className="d-block">Fur Real - Whatever your pet needs</h1>
+      <div className="w-100 d-block" style={{ maxWidth: "400px" }}>
+        <h1 className="text-center">Here be our products</h1>
       </div>
+      <footer>
+        <a href="https://www.freepik.com/vectors/food">
+          Food vector created by macrovector - www.freepik.com
+        </a>
+      </footer>
     </Container>
   );
 }
