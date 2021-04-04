@@ -49,6 +49,21 @@ const productsList = [
     pet: "dog",
   },
   {
+    id: 10,
+    name: "Purina Friskies Seafood Sensations Adult Dry Cat Food",
+    imgUrl:
+      "https://images-na.ssl-images-amazon.com/images/I/81dud9PnWZL._AC_SL1500_.jpg",
+    description: "Seafood Flavors For The Taste Cats Love",
+    Brand: "Purina Friskies",
+    Flavor: "Chicken & Brown Rice",
+    Weight: 22,
+    Form: "Dry",
+    Age: "Adult;kitten;senior",
+    price: 17.99,
+    category: "food",
+    pet: "cat",
+  },
+  {
     id: 4,
     name: "PEDIGREE Adult Complete Nutrition",
     imgUrl:
@@ -96,6 +111,21 @@ const productsList = [
     price: 24.99,
     category: "food",
     pet: "dog",
+  },
+  {
+    id: 11,
+    name: "Purina Kit & Kaboodle Indoor Adult Dry Cat Food",
+    imgUrl:
+      "https://images-na.ssl-images-amazon.com/images/I/818KwFKl3iL._AC_SL1500_.jpg",
+    description: "Formulated specifically for adult indoor cats",
+    Brand: "Purina Kit & Kaboodle",
+    Flavor: "Chicken, Salmon, Turkey & Garden Greens",
+    Weight: 16,
+    Form: "Dry",
+    Age: "Adult",
+    price: 14.46,
+    category: "food",
+    pet: "cat",
   },
   {
     id: 7,

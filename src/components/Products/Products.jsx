@@ -1,15 +1,14 @@
 import "./products.css";
 import React, { useState, useEffect } from "react";
-// import { Container, Row, Col } from "react-bootstrap";
 import productsList from "../../assets/img/productsDB.js";
 import Product from "../Product/Product";
-import { Button } from "react-bootstrap";
 import Pagination from "../Pagination";
 
 export default function Products() {
   const [products] = useState(productsList);
   const [currentPage, setCurrentPage] = useState(1);
-  const [productsPerPage, setProductsPerPage] = useState(3);
+  // const [productsPerPage, setProductsPerPage] = useState(3);
+  const [productsPerPage] = useState(3);
 
   useEffect(() => {}, [products]);
 
@@ -27,37 +26,28 @@ export default function Products() {
     setCurrentPage(currentPage - 1);
   };
 
-  const onSetProductsPerPAge = (e) => {
-    //TODO  implement
-    setProductsPerPage(productsPerPage);
-  };
+  // const onSetProductsPerPAge = (e) => {
+  //   //TODO  implement
+  //   setProductsPerPage(productsPerPage);
+  // };
 
   const onChangePage = (pageNumber) => {
     setCurrentPage(pageNumber);
   };
   return (
-    <div className="container products">
-      {currentProducts.map((product) => {
-        return <Product key={product.id} details={product} />;
-      })}
-      <Button onClick={onPrevPage}>Prev</Button>
-      <Button onClick={onNextPage}>Next</Button>
-      <Button onClick={onSetProductsPerPAge}>P</Button>
+    <>
+      <div className="container products">
+        {currentProducts.map((product) => {
+          return <Product key={product.id} details={product} />;
+        })}
+      </div>
       <Pagination
         itemsPerPage={productsPerPage}
         totalItemsNumber={products.length}
         onChangePage={onChangePage}
+        onPrevPage={onPrevPage}
+        onNextPage={onNextPage}
       />
-    </div>
+    </>
   );
 }
-
-// <div className="container">
-//   <div className="row">
-//     {this.state.films.map((film) => (
-//       <div key={film.id} id="cardItem" className="col-xs-1">
-//         <MovieCard film={film} />
-//       </div>
-//     ))}
-//   </div>
-// </div>;

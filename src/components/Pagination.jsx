@@ -1,6 +1,12 @@
 import React, { useState, useEffect } from "react";
 
-export default function Pagination(itemsPerPage, totalItemsNumber, onChangePage) {
+export default function Pagination({
+  itemsPerPage,
+  totalItemsNumber,
+  onChangePage,
+  onPrevPage,
+  onNextPage,
+}) {
   const [pageNumbers, setPageNumbers] = useState([]);
 
   useEffect(() => {
@@ -10,11 +16,18 @@ export default function Pagination(itemsPerPage, totalItemsNumber, onChangePage)
       numbers.push(i);
     }
     setPageNumbers(numbers);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
     <nav>
       <ul className="pagination">
+        <li className="page-item" key="0">
+          <a href="!#" className="page-link" onClick={() => onPrevPage()}>
+            {" "}
+            Prev
+          </a>
+        </li>
         {pageNumbers.map((number) => (
           <li key={number} className="page-item">
             <a
@@ -26,6 +39,11 @@ export default function Pagination(itemsPerPage, totalItemsNumber, onChangePage)
             </a>
           </li>
         ))}
+        <li className="page-item" key={pageNumbers.length + 1}>
+          <a href="!#" className="page-link" onClick={() => onNextPage()}>
+            Next
+          </a>
+        </li>
       </ul>
     </nav>
   );
