@@ -8,10 +8,16 @@
   /* height: 30vh; */
   height: 80%;
   background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
 }
 
 .product-img {
   max-height: 40%;
+  max-width: 100%;
   object-fit: contain;
   height: 200px;
 }
@@ -20,6 +26,7 @@
   font-size: 1.2rem;
   height: 25%;
   margin-bottom: 5px;
+  text-align: center;
 }
 
 .product-description {

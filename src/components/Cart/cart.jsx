@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
+import { CartContext } from "../CartContext/CartContext";
 
-export default function cart() {
+export default function Cart() {
+  const [cart, setCart] = useContext(CartContext);
+  const totalPrice = cart.reduce((acc, curr) => acc + curr.price, 0);
   return (
     <div>
-      <span>item in cart: 0</span>
+      <span>item in cart: {cart.length} </span>
       <br />
-      <span>total price: 0</span>
+      <span>total price: {totalPrice}</span>
     </div>
   );
 }
