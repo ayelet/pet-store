@@ -6,6 +6,7 @@ import { Container } from "react-bootstrap";
 import Products from "./Products/Products";
 import CartProvider from "./CartContext/CartContext";
 import NavigationMenu from "./NavigationMenu/NavigationMenu";
+import Footer from "./Footer/Footer";
 
 function App() {
   return (
@@ -19,11 +20,7 @@ function App() {
           <Products />
         </CartProvider>
 
-        <footer>
-          <a href="https://www.freepik.com/vectors/food">
-            Food vector created by macrovector - www.freepik.com
-          </a>
-        </footer>
+        <Footer />
       </Container>
     </>
   );

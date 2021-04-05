@@ -2,15 +2,18 @@ import "./products.css";
 import React, { useState, useEffect } from "react";
 import productsList from "../../assets/img/productsDB.js";
 import Product from "../Product/Product";
-import Pagination from "../Pagination";
+import Pagination from "../Paginationa/Pagination";
 
 export default function Products() {
   const [products] = useState(productsList);
   const [currentPage, setCurrentPage] = useState(1);
+  const [disablePrev, setDisablePrev] = useState(true);
+  const [disableNext, setDisableNext] = useState(false);
   // const [productsPerPage, setProductsPerPage] = useState(3);
   const [productsPerPage] = useState(3);
 
   useEffect(() => {}, [products]);
+  // useEffect(() => {}, [currentPage]);
 
   // calc the products to show
   const indexOfLastProd = currentPage * productsPerPage;
@@ -31,8 +34,11 @@ export default function Products() {
   //   setProductsPerPage(productsPerPage);
   // };
 
-  const onChangePage = (pageNumber) => {
+  const onChangePage = (pageNumber, minPgNum, maxPgNum) => {
     setCurrentPage(pageNumber);
+    setDisablePrev(pageNumber <= minPgNum);
+    setDisableNext(pageNumber >= maxPgNum);
+    console.log(pageNumber, disablePrev, disableNext, minPgNum, maxPgNum);
   };
   return (
     <>
@@ -44,9 +50,12 @@ export default function Products() {
       <Pagination
         itemsPerPage={productsPerPage}
         totalItemsNumber={products.length}
+        // currentPage={currentPage}
         onChangePage={onChangePage}
         onPrevPage={onPrevPage}
         onNextPage={onNextPage}
+        disabledPrev={disablePrev}
+        disabledNext={disableNext}
       />
     </>
   );
