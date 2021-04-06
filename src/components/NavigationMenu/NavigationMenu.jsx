@@ -9,17 +9,25 @@ import { BrowserRouter, Link } from "react-router-dom";
 import Logo from "../../assets/img/Logo2.png";
 
 function NavigationMenu() {
-  const [navbarCollapsed, setNavabrCollapsed] = useState(false);
+  const [navbarCollapsed, setNavbarCollapsed] = useState(false);
   const [navbarClassName, setNavbarClassName] = useState(
-    "collapse navbar-collapse show"
+    "collapse navbar-collapse"
   );
+
+  const toggleNavbar = () => {
+    setNavbarCollapsed(!navbarCollapsed);
+    navbarCollapsed
+      ? setNavbarClassName("collapse navbar-collapse")
+      : setNavbarClassName("collapse navbar-collapse show");
+  };
+
   return (
     <BrowserRouter>
       <nav className="navbar navbar-expand-sm text-white bg-theme">
         <Link to="/" className="navbar-brand ml-5">
           <img src={Logo} alt="Furr Real Logo" width="100px" />
         </Link>{" "}
-        <button className="navbar-toggler" type="button">
+        <button className="navbar-toggler" type="button" onClick={toggleNavbar}>
           <span className="text-white">Menu</span>
         </button>
         <div className={navbarClassName}>
