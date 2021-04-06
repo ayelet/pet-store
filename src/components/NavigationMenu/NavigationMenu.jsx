@@ -1,23 +1,48 @@
+import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "./NavigationMenu.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch, faBars } from "@fortawesome/free-solid-svg-icons";
-import React from "react";
-import { BrowserRouter, Route, Link } from "react-router-dom";
-import Logo from "../../assets/img/Logo.png";
+import "../Layout/Layout.css";
+import { FaCartArrowDown } from "react-icons/fa";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faSearch, faBars } from "@fortawesome/free-solid-svg-icons";
+import React, { useState } from "react";
+import { BrowserRouter, Link } from "react-router-dom";
+import Logo from "../../assets/img/Logo2.png";
 
 function NavigationMenu() {
+  const [navbarCollapsed, setNavabrCollapsed] = useState(false);
+  const [navbarClassName, setNavbarClassName] = useState(
+    "collapse navbar-collapse show"
+  );
   return (
-    <nav className="navbar navbar-expand-sm text-white bg-theme">
-      {/*<Link to="/" className="navbar-brand ml-5">
-           <img src={Logo} alt="Furr Real Logo" width="100px" />
-  </Link>*/}
-      <a href="navbar-brand ml-5">
-        <img src={Logo} alt="Furr Real Logo" width="100px" />
-      </a>
-      <button className="navbar-toggler" type="button">
-        <span className="text-white">Menu</span>
-      </button>
-    </nav>
+    <BrowserRouter>
+      <nav className="navbar navbar-expand-sm text-white bg-theme">
+        <Link to="/" className="navbar-brand ml-5">
+          <img src={Logo} alt="Furr Real Logo" width="100px" />
+        </Link>{" "}
+        <button className="navbar-toggler" type="button">
+          <span className="text-white">Menu</span>
+        </button>
+        <div className={navbarClassName}>
+          <ul className="navbar-nav ml-auto mr-5">
+            <li className="nav-item">
+              <Link to="/" className="nav-link text-white">
+                Home
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/" className="nav-link text-white">
+                About Us
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/" className="nav-link text-white">
+                <FaCartArrowDown className="cart-icon" />
+              </Link>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </BrowserRouter>
   );
   // return (
   //   <nav className="topnav">

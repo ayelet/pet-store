@@ -1,5 +1,5 @@
-import "./App.css";
 import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
 // import Signup from "./UserLogin/signup";
 import { Container } from "react-bootstrap";
 // import AuthProvider from "./contexts/authContext";

@@ -46,3 +46,7 @@
 .rounded {
   border-radius: 0.25rem;
 }
+
+.bg-theme {
+  background-color: var(--background-color);
+}

@@ -2,6 +2,7 @@ import React from "react";
 import Footer from "../Footer/Footer";
 import NavigationMenu from "../NavigationMenu/NavigationMenu";
 
+import "./Layout.css"
 // export default function Layout({ children }) {
 //   {
 //     (children) => (<div>{children}</div>)
