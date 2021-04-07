@@ -21,24 +21,35 @@ body {
 }
 
 .hero {
-  min-height: 100vh;
+  min-height: 80vh;
   width: 100%;
-  background: url("../../assets/img/hero3.png");
+  background: url("../../assets/img/hero31.png") no-repeat center center/cover;
   font-family: KiriFont;
-  background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.page {
+  height: 99vh;
+  width: 97vw;
+  display: flex;
   flex-direction: column;
 }
 
-.about {
-  min-height: 30vh;
-  background: url("../../assets/img/about.jpg");
-  font-family: KiriFont;
-  background-size: cover;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+nav {
+  order: 1;
+  flex: 1;
+}
+
+.content {
+  order: 2;
+  height: 77%;
+}
+
+footer {
+  order: 3;
+  flex: 1;
 }

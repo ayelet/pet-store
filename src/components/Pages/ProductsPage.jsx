@@ -1,5 +1,4 @@
 import React from "react";
-// import Layout from "../Layout/Layout";
 import { Container } from "react-bootstrap";
 import CartProvider from "../CartContext/CartContext";
 import Products from "../Products/Products";

@@ -1,11 +1,11 @@
 import React from "react";
-import { Jumbotron, Container, Button } from "react-bootstrap";
+import { Jumbotron, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 const HomePage = () => {
   return (
     <Jumbotron className="hero" fluid>
-      <Container>
+      <div>
         <h1>Furr Real</h1>
         <p>We Care For Your Pet's Health</p>
         <Link to="/Products">
@@ -14,7 +14,7 @@ const HomePage = () => {
         <Link to="/Calculator">
           <Button variant="info">Nutrition Calculator</Button>
         </Link>
-      </Container>
+      </div>
     </Jumbotron>
   );
 };

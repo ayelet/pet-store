@@ -5,12 +5,15 @@ import CartProvider from "./CartContext/CartContext";
 // import Signup from "./UserLogin/signup";
 // import { Container } from "react-bootstrap";
 import IndexPage from "./Pages/";
+import Layout from "./Layout/Layout";
 
 function App() {
   return (
     <BrowserRouter>
       <CartProvider>
-        <IndexPage />{" "}
+        <Layout>
+          <IndexPage />{" "}
+        </Layout>
       </CartProvider>
     </BrowserRouter>
   );
