@@ -6,7 +6,7 @@ import { Button } from "react-bootstrap";
 import { CartContext } from "../CartContext/CartContext";
 import { Link } from "react-router-dom";
 
-export default function Product({ details }) {
+export default function ProductCard({ details }) {
   const [cart, setCart] = useContext(CartContext);
   //   const [name, setName] = useState("");
   //   const [description, setDescription] = useState("");
@@ -18,7 +18,10 @@ export default function Product({ details }) {
 
   return (
     <div className="product rounded shadow">
-      <Link style={{ textDecoration: "none" }} to={`/Products/${details.id}`}>
+      <Link
+        style={{ textDecoration: "none" }}
+        to={`/Products/id=${details.id}`}
+      >
         <img className="product-img mt-2" src={details.imgUrl} alt="" />
         <div className="product-title">{details.name}</div>
         <div className="product-price">
