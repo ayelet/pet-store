@@ -4,6 +4,8 @@ import CartProvider from "../CartContext/CartContext";
 import Products from "../Products/Products";
 
 export default function ProductsPage() {
+ 
+
   return (
     <>
       <Container

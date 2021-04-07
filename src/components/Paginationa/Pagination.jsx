@@ -16,7 +16,7 @@ export default function Pagination({
   // const [currentPage, setCurrentPage] = useState(1);
   // const [souldDisableNext] = useState("");
   // const [shouldDisablePrev, setShouldDisablePrev] = useState("disabled");
-
+  console.log(pageNumbers, totalItemsNumber);
   useEffect(() => {
     const numbers = [];
     for (let i = 1; i < Math.ceil(totalItemsNumber / itemsPerPage); i++) {
@@ -36,44 +36,45 @@ export default function Pagination({
   //   };
   // }, [currentPage]);
 
-  return (
-    <nav>
-      <ul className="pagination">
-        <li className="page-item" key="0">
-          <a
-            href="!#"
-            className={`page-link  ${disabledPrev ? "disabled" : ""}`}
-            onClick={() => onPrevPage()}
-          >
-            {" "}
-            Prev
-          </a>
-        </li>
-        {pageNumbers.map((number) => (
-          <li key={number} className="page-item">
-            <a
-              href="!#"
-              className="page-link"
-              onClick={() => onChangePage(number, 1, maxPageNum)}
-            >
-              {number}
-            </a>
-          </li>
-        ))}
-        <li
-          // className={`page-link ${souldDisableNext}`}
-          className="page-item"
-          key={pageNumbers.length + 1}
-        >
-          <a
-            href="!#"
-            className={`page-link  ${disabledNext ? "disabled" : ""}`}
-            onClick={() => onNextPage()}
-          >
-            Next
-          </a>
-        </li>
-      </ul>
-    </nav>
-  );
+  return <div>These are my pages</div>;
+  // return (
+  //   <nav>
+  //     <ul className="pagination">
+  //       <li className="page-item" key="0">
+  //         <a
+  //           href="!#"
+  //           className={`page-link  ${disabledPrev ? "disabled" : ""}`}
+  //           onClick={() => onPrevPage()}
+  //         >
+  //           {" "}
+  //           Prev
+  //         </a>
+  //       </li>
+  //       {pageNumbers.map((number) => (
+  //         <li key={number} className="page-item">
+  //           <a
+  //             href="!#"
+  //             className="page-link"
+  //             onClick={() => onChangePage(number, 1, maxPageNum)}
+  //           >
+  //             {number}
+  //           </a>
+  //         </li>
+  //       ))}
+  //       <li
+  //         // className={`page-link ${souldDisableNext}`}
+  //         className="page-item"
+  //         key={pageNumbers.length + 1}
+  //       >
+  //         <a
+  //           href="!#"
+  //           className={`page-link  ${disabledNext ? "disabled" : ""}`}
+  //           onClick={() => onNextPage()}
+  //         >
+  //           Next
+  //         </a>
+  //       </li>
+  //     </ul>
+  //   </nav>
+  // );
 }

@@ -1,9 +1,11 @@
-import React, { useContext } from "react";
-import { CartContext } from "../CartContext/CartContext";
+import React from "react";
+import { useState } from "react";
+// import { CartContext } from "../CartContext/CartContext";
 
 export default function Cart() {
   // const [cart, setCart] = useContext(CartContext);
-  const [cart] = useContext(CartContext);
+  //   const [cart] = useContext(CartContext);
+  const [cart] = useState([1, 2, 3, 4, 1, 3]);
   const totalPrice = cart.reduce((acc, curr) => acc + curr.price, 0);
   return (
     <div className="cart">

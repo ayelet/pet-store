@@ -1,22 +1,39 @@
-import React, { useContext } from "react";
-import { CartContext } from "../CartContext/CartContext";
+import React, { useState } from "react";
+// import { CartContext } from "../CartContext/CartContext";
 
 export default function CartPage() {
   // const [cart, setCart] = useContext(CartContext);
-  const [cart] = useContext(CartContext);
-  const totalPrice = cart.reduce((acc, curr) => acc + curr.price, 0);
+  //   const [cart] = useContext(CartContext);
+  //   const totalPrice = cart.reduce((acc, curr) => acc + curr.price, 0);
+  const [cart] = useState([]);
+  const totalPrice = 0;
+  console.log(totalPrice);
+  //   <CartContext.Consumer>
+  //     {(value) => {
   return (
     <div className="cart">
       <h2>Cart Items</h2>
       <br />
-
       <span>item in cart: {cart.length} </span>
       <br />
-      <span>total price: {totalPrice}</span>
+      <span>total price: {totalPrice}</span>{" "}
     </div>
   );
+  // }
+  // }
+  //   </CartContext.Consumer>;
 }
 
+// return (
+//   <div className="cart">
+//     <h2>Cart Items</h2>
+//     <br />
+
+//     <span>item in cart: {cart.length} </span>
+//     <br />
+//     <span>total price: {totalPrice}</span>
+//   </div>
+// );
 /*
 const { cartItems, onAdd, onRemove } = props;
   const itemsPrice = cartItems.reduce((a, c) => a + c.qty * c.price, 0);
@@ -85,3 +102,13 @@ const { cartItems, onAdd, onRemove } = props;
   );
 
 */
+
+// {(context) => (
+//         <React.Fragment>
+//          {/*  <MainNavigation
+//             cartItemNumber={context.cart.reduce((count, curItem) => {
+//               return count + curItem.quantity;
+//             }, 0)}
+//           /> */}
+
+//       )}
