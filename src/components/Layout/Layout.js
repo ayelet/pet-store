@@ -18,3 +18,10 @@ export default function Layout({ children }) {
     </div>
   );
 }
+
+  // <BrowserRouter>
+  //   <Header />
+  //   <Route path="/" exact component={Home} />
+  //   <Route path="/Products" exact component={Products} />
+  //   <Route path="/Products/:id" component={ProductDetail} />
+  // </BrowserRouter>;

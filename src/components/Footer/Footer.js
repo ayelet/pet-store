@@ -11,6 +11,9 @@ export default function Footer() {
               <a href="https://www.freepik.com/vectors/food">
                 Food vector created by macrovector - www.freepik.com
               </a>
+              <a href="https://www.freepik.com/photos/woman">
+                Woman photo created by wayhomestudio - www.freepik.com
+              </a>
             </div>
           </div>
         </div>

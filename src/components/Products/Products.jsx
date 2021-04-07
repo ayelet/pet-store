@@ -1,7 +1,7 @@
 import "./products.css";
 import React, { useState, useEffect } from "react";
 import productsList from "../../assets/img/productsDB.js";
-import Product from "../Product/Product";
+import ProductCard from "../Product/ProductCard";
 import Pagination from "../Paginationa/Pagination";
 
 export default function Products() {
@@ -35,6 +35,7 @@ export default function Products() {
   // };
 
   const onChangePage = (pageNumber, minPgNum, maxPgNum) => {
+    console.log("onChagenPage", pageNumber);
     setCurrentPage(pageNumber);
     setDisablePrev(pageNumber <= minPgNum);
     setDisableNext(pageNumber >= maxPgNum);
@@ -42,9 +43,9 @@ export default function Products() {
   };
   return (
     <>
-      <div className="container products">
+      <div className="container text-center products">
         {currentProducts.map((product) => {
-          return <Product key={product.id} details={product} />;
+          return <ProductCard key={product.id} details={product} />;
         })}
       </div>
       <Pagination

@@ -8,6 +8,13 @@
   background-color: var(--background-color);
 } */
 
+.badge-notify {
+  background: #4cd964;
+  position: relative;
+  top: -12px;
+  left: -16px;
+}
+
 .topnav {
   background-color: var(--background-color);
   overflow: hidden;

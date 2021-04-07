@@ -1,18 +1,26 @@
 import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "./NavigationMenu.css";
 import "../Layout/Layout.css";
-import { FaCartArrowDown } from "react-icons/fa";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faSearch, faBars } from "@fortawesome/free-solid-svg-icons";
+import { FaShoppingCart, FaUserCircle, FaSearch } from "react-icons/fa";
+import { FiMenu } from "react-icons/fi";
 import React, { useState } from "react";
-import { BrowserRouter, Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import Logo from "../../assets/img/Logo2.png";
+import { FormControl, InputGroup, Button } from "react-bootstrap";
 
 function NavigationMenu() {
   const [navbarCollapsed, setNavbarCollapsed] = useState(false);
   const [navbarClassName, setNavbarClassName] = useState(
     "collapse navbar-collapse"
   );
+  const [cartQty] = useState(0);
+
+  const menuItems = [
+    { id: 1, text: "Home", url: "/" },
+    { id: 2, text: "Shop", url: "/Products" },
+    { id: 3, text: "About Us", url: "/About" },
+    { id: 4, text: "Contact", url: "/Contact" },
+  ];
 
   const toggleNavbar = () => {
     setNavbarCollapsed(!navbarCollapsed);
@@ -22,76 +30,49 @@ function NavigationMenu() {
   };
 
   return (
-    <BrowserRouter>
-      <nav className="navbar navbar-expand-sm text-white bg-theme">
-        <Link to="/" className="navbar-brand ml-5">
-          <img src={Logo} alt="Furr Real Logo" width="100px" />
-        </Link>{" "}
-        <button className="navbar-toggler" type="button" onClick={toggleNavbar}>
-          <span className="text-white">Menu</span>
-        </button>
-        <div className={navbarClassName}>
-          <ul className="navbar-nav ml-auto mr-5">
-            <li className="nav-item">
-              <Link to="/" className="nav-link text-white">
-                Home
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/" className="nav-link text-white">
-                About Us
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/" className="nav-link text-white">
-                <FaCartArrowDown className="cart-icon" />
-              </Link>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </BrowserRouter>
+    <nav className="navbar navbar-expand-sm text-white bg-theme">
+      <Link to="/" className="navbar-brand ml-5">
+        <img src={Logo} alt="Furr Real Logo" width="60px" />
+      </Link>{" "}
+      <button className="navbar-toggler" type="button" onClick={toggleNavbar}>
+        <FiMenu className="text-white login-icon" />
+      </button>
+      <div className={navbarClassName}>
+        <ul className="navbar-nav ml-auto mr-5">
+          {menuItems.map((item) => {
+            return (
+              <li key={item.id} className="nav-item">
+                <Link to={item.url} className="nav-link text-white">
+                  {item.text}
+                </Link>
+              </li>
+            );
+          })}
+          <li className="nav-item">
+            <InputGroup className="mx-1 text-center outline-0">
+              <FormControl placeholder="Search" />
+              <InputGroup.Append>
+                <Button variant="outline-secondary">
+                  <FaSearch className="search-icon" />
+                </Button>
+              </InputGroup.Append>
+            </InputGroup>
+          </li>
+          <li className="nav-item">
+            <Link to="/Login" className="nav-link text-white">
+              <FaUserCircle className="login-icon ml-2" />
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link to="/Cart" className="nav-link text-white">
+              <FaShoppingCart className="cart-icon" />
+              <span class="badge badge-notify">{cartQty}</span>
+            </Link>
+          </li>
+        </ul>
+      </div>
+    </nav>
   );
-  // return (
-  //   <nav className="topnav">
-  //     <ul>
-  //       <li className="logo">Furr Real</li>
-  //       <li className="btn">
-  //         <FontAwesomeIcon icon={faBars} />
-  //       </li>
-  //       <div className="items">
-  //         <li>
-  //           <a className="active" href="/#">
-  //             Home
-  //           </a>
-  //         </li>
-  //         <li>
-  //           <a className="active" href="/#">
-  //             Home
-  //           </a>
-  //         </li>
-  //         <li>
-  //           <a className="active" href="/#">
-  //             Dogs
-  //           </a>
-  //         </li>
-  //         <li>
-  //           <a className="active" href="/#">
-  //             Cats
-  //           </a>
-  //         </li>
-  //       </div>
-  //       <li className="search-icon">
-  //         <input type="search" placeholder="Search" />
-  //         <label htmlFor="" className="icon">
-  //           <span className="fas fa-search">
-  //             <FontAwesomeIcon icon={faSearch} />
-  //           </span>
-  //         </label>
-  //       </li>
-  //     </ul>
-  //   </nav>
-  // );
 }
 
-export default NavigationMenu;
+export default withRouter(NavigationMenu);
