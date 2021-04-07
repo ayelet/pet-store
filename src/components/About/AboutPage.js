@@ -14,12 +14,8 @@ export default function AboutPage() {
         <div className="about--info col-md-6 product-detail-card-text">
           <h1>About Us</h1>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem
-            aspernatur culpa repellendus aut aliquam, consectetur laborum
-            consequuntur earum? Mollitia tempore omnis beatae vero eveniet harum
-            perferendis aliquid laudantium nulla soluta odit alias iusto ipsa
-            non, natus fugit est atque. Sed corrupti, velit esse ratione facere
-            aperiam rem assumenda beatae autem?
+            Furr Real is a category-defining health and wellness store focused
+            on improving the lives of pets and pet parents.
           </p>
         </div>
       </Row>
