@@ -52,7 +52,12 @@ function NavigationMenu() {
             <InputGroup className="mx-1 text-center outline-0">
               <FormControl placeholder="Search" />
               <InputGroup.Append>
-                <Button variant="outline-secondary">
+                <Button
+                  variant="outline-secondary"
+                  onChange={(e) => {
+                    console.log(e.target.value);
+                  }}
+                >
                   <FaSearch className="search-icon" />
                 </Button>
               </InputGroup.Append>
