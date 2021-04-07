@@ -13,6 +13,7 @@ import Footer from "../Footer/Footer";
 import HomePage from "./HomePage";
 // import Product from "../Product/ProductCard";
 import ProductDetail from "../Product/ProductDetail";
+import NutritionCalculaotr from "./NutritionCalculator/NutritionCalculaotr";
 
 export default function IndexPage() {
   return (
@@ -22,8 +23,9 @@ export default function IndexPage() {
       <Route path="/Contact" exact component={ContactPage} />
       <Route path="/About" exact component={AboutPage} />
       <Route path="/Products/" component={ProductsPage} />
-      <Route path="/Products/:id" component={ProductDetail} />
+      <Route path="/Products/id=:id" component={ProductDetail} />
       <Route path="/Cart" component={Cart} />
+      <Route path="/Calculator" component={NutritionCalculaotr} />
       <Footer />
     </div>
   );
