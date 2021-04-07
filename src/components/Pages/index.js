@@ -2,7 +2,7 @@ import React from "react";
 
 import { Route } from "react-router-dom";
 import ProductsPage from "./ProductsPage";
-import Cart from "../Cart/Cart";
+import CartPage from "../Cart/CartPage";
 import AboutPage from "../About/AboutPage";
 import ContactPage from "../Contact/Contact";
 // import CartProvider from "../CartContext/CartContext";
@@ -18,7 +18,7 @@ export default function IndexPage() {
       <Route path="/About" exact component={AboutPage} />
       <Route path="/Products/" component={ProductsPage} />
       <Route path="/Products/id=:id" component={ProductDetail} />
-      <Route path="/Cart" component={Cart} />
+      <Route path="/Cart" component={CartPage} />
       <Route path="/Calculator" component={NutritionCalculaotr} />
     </div>
   );
