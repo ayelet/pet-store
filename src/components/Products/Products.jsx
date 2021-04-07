@@ -6,6 +6,7 @@ import Pagination from "../Paginationa/Pagination";
 
 export default function Products() {
   const [products] = useState(productsList);
+  // const [filteredProducts] = useState(productsList);
   const [currentPage, setCurrentPage] = useState(1);
   const [disablePrev, setDisablePrev] = useState(true);
   const [disableNext, setDisableNext] = useState(false);
@@ -13,7 +14,6 @@ export default function Products() {
   const [productsPerPage] = useState(3);
 
   useEffect(() => {}, [products]);
-  // useEffect(() => {}, [currentPage]);
 
   // calc the products to show
   const indexOfLastProd = currentPage * productsPerPage;
