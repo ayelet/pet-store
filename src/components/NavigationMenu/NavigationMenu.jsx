@@ -8,12 +8,12 @@ import { Link, withRouter } from "react-router-dom";
 import Logo from "../../assets/img/Logo2.png";
 import { FormControl, InputGroup, Button } from "react-bootstrap";
 
-function NavigationMenu() {
+function NavigationMenu(props) {
   const [navbarCollapsed, setNavbarCollapsed] = useState(false);
   const [navbarClassName, setNavbarClassName] = useState(
     "collapse navbar-collapse"
   );
-  const [cartQty] = useState(0);
+  const [cartQty] = useState(props.cartQty);
 
   const menuItems = [
     { id: 1, text: "Home", url: "/" },
@@ -71,7 +71,7 @@ function NavigationMenu() {
           <li className="nav-item">
             <Link to="/Cart" className="nav-link text-white">
               <FaShoppingCart className="cart-icon" />
-              <span class="badge badge-notify">{cartQty}</span>
+              <span className="badge badge-notify">{cartQty}</span>
             </Link>
           </li>
         </ul>

@@ -10,3 +10,76 @@
 .badge-warning[href] {
   background-color: #c67605;
 }
+
+.items-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.cart-item {
+  display: flex;
+  border: 1px solid lightblue;
+  box-shadow: 0 0 0 20 lightblue;
+  margin: 20px;
+}
+
+a {
+  color: #334862;
+  text-decoration: none;
+}
+
+td.product-name {
+  word-break: break-word;
+  text-overflow: ellipsis;
+}
+
+.quantity input[type="number"] {
+  max-width: 2.5em;
+  width: 2.5em;
+  text-align: center;
+  border-radius: 0;
+  -webkit-appearance: none;
+  margin: 0;
+  font-size: 1em;
+}
+
+.quantity input {
+  padding-left: 0;
+  padding-right: 0;
+  display: inline-block;
+  vertical-align: top;
+  margin: 0;
+}
+
+.button.is-form:hover {
+  color: #000;
+  background-color: #f1f1f1;
+}
+
+.quantity .minus,
+.quantity .plus {
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+
+.shop_table .cart_item td {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+/* ////////////////////////////// */
+.cart-form {
+  -webkit-text-size-adjust: 100%;
+  --wp-admin-theme-color: #007cba;
+  --wp-admin-theme-color-darker-10: #006ba1;
+  --wp-admin-theme-color-darker-20: #005a87;
+  --primary-color: #6dcce8;
+  color: #777;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+  font-family: "Open Sans", sans-serif;
+  box-sizing: border-box;
+  margin-bottom: 1.3em;
+}

@@ -1,89 +1,83 @@
-import React from "react";
-import { useState } from "react";
+// import React from "react";
+// import { useState } from "react";
+
+// import { getByPlaceholderText } from "@testing-library/dom";
+
 // import { CartContext } from "../CartContext/CartContext";
 
-export default function Cart() {
-  // const [cart, setCart] = useContext(CartContext);
-  //   const [cart] = useContext(CartContext);
-  const [cart] = useState([1, 2, 3, 4, 1, 3]);
-  const totalPrice = cart.reduce((acc, curr) => acc + curr.price, 0);
-  return (
-    <div className="cart">
-      <h2>Cart Items</h2>
-      <br />
+class ShopCart {
+  constructor() {
+    this.items = [
+      { id: 1, qty: 2, price: 24.99, name: "name2" },
+      { id: 2, qty: 1, price: 3.75, name: "name1" },
+    ];
+  }
 
-      <span>item in cart: {cart.length} </span>
-      <br />
-      <span>total price: {totalPrice}</span>
-    </div>
-  );
+  find(id) {
+    return this.items.find((item) => item.id === id);
+  }
+
+  indexOf(id) {
+    let index = this.items.indexOf(this.find(id));
+    return index;
+  }
+
+  add(id, price) {
+    let item = this.find(id);
+    if (item) return (item.qty += 1);
+    // item doesn't exist, so add it
+    return this.items.push({ id: id, qty: 1, price: price });
+  }
+  //deletes and item entirely from cart
+  // returns true on success, false if item was not found
+  deleteItem(id) {
+    let item = this.find(id);
+    if (item) {
+      let i = this.indexOf(item);
+      this.items.splice(i, 1);
+      return true;
+    }
+    return false;
+  }
+  // remove 1 item from the quantity , if qty === 0, delete it from the array
+  // returns true on success, false if item not found
+  remove(id) {
+    let item = this.find(id);
+    if (item) {
+      if (item.qty > 1) {
+        item.qty -= 1;
+      } else {
+        this.deleteItem(id);
+      }
+      return true;
+    }
+    return false;
+  }
+
+  // update a certain quantity of an item
+  // return true on success, false if item not found
+  update(id, qty) {
+    let item = this.find(id);
+    if (item) {
+      console.log(item);
+      item.qty = qty;
+
+      return true;
+    }
+    return false;
+  }
+  // return the items array
+  getCart() {
+    return this.items;
+  }
+
+  getNumberOfItems() {
+    return this.items.reduce((acc, item) => acc + item.qty, 0);
+  }
+
+  getTotal() {
+    return this.items.reduce((acc, item) => acc + item.qty * item.price, 0);
+  }
 }
-
-/*
-const { cartItems, onAdd, onRemove } = props;
-  const itemsPrice = cartItems.reduce((a, c) => a + c.qty * c.price, 0);
-  const taxPrice = itemsPrice * 0.14;
-  const shippingPrice = itemsPrice > 2000 ? 0 : 20;
-  const totalPrice = itemsPrice + taxPrice + shippingPrice;
-  return (
-    <aside className="block col-1">
-      <h2>Cart Items</h2>
-      <div>
-        {cartItems.length === 0 && <div>Cart is empty</div>}
-        {cartItems.map((item) => (
-          <div key={item.id} className="row">
-            <div className="col-2">{item.name}</div>
-            <div className="col-2">
-              <button onClick={() => onRemove(item)} className="remove">
-                -
-              </button>{' '}
-              <button onClick={() => onAdd(item)} className="add">
-                +
-              </button>
-            </div>
-
-            <div className="col-2 text-right">
-              {item.qty} x ${item.price.toFixed(2)}
-            </div>
-          </div>
-        ))}
-
-        {cartItems.length !== 0 && (
-          <>
-            <hr></hr>
-            <div className="row">
-              <div className="col-2">Items Price</div>
-              <div className="col-1 text-right">${itemsPrice.toFixed(2)}</div>
-            </div>
-            <div className="row">
-              <div className="col-2">Tax Price</div>
-              <div className="col-1 text-right">${taxPrice.toFixed(2)}</div>
-            </div>
-            <div className="row">
-              <div className="col-2">Shipping Price</div>
-              <div className="col-1 text-right">
-                ${shippingPrice.toFixed(2)}
-              </div>
-            </div>
-
-            <div className="row">
-              <div className="col-2">
-                <strong>Total Price</strong>
-              </div>
-              <div className="col-1 text-right">
-                <strong>${totalPrice.toFixed(2)}</strong>
-              </div>
-            </div>
-            <hr />
-            <div className="row">
-              <button onClick={() => alert('Implement Checkout!')}>
-                Checkout
-              </button>
-            </div>
-          </>
-        )}
-      </div>
-    </aside>
-  );
-
-*/
+const Cart = new ShopCart();
+export default Cart;

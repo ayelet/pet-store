@@ -1,23 +1,28 @@
 import "./product.css";
 import "../App.css";
+import Cart from "../Cart/Cart";
 
-import React, { useState } from "react";
+import React from "react";
+import { useState } from "react";
 import { Button } from "react-bootstrap";
 // import { CartContext } from "../CartContext/CartContext";
 import { Link } from "react-router-dom";
 
-export default function ProductCard({ details }) {
-  // const [cart] = useContext(CartContext);
-  const [cart, setCart] = useState([]);
+export default function ProductCard({ details, onAdd, onRemove }) {
+  const [cart, setCart] = useState(Cart);
+  console.log("Prodcutc card: ", cart);
+  // const [cart, setCart] = useState([]);
   //   const [name, setName] = useState("");
   //   const [description, setDescription] = useState("");
   // <CartContext.Consumer>
   //   {" "}
   //   {(value) => {
-  const addToCart = (productId) => {
+  const addToCart = (id, price) => {
+    cart.add(id, price);
+    console.log(id, price);
     // console.log("add to cart handler", cart);
-    setCart([...cart, productId]);
-    console.log(cart);
+    // setCart([...cart, productId]);
+    setCart(cart);
   };
 
   return (
@@ -31,7 +36,10 @@ export default function ProductCard({ details }) {
         <div className="product-price">
           <span>Price: ${details.Price}</span>
         </div>
-        <Button className="bg-info" onClick={() => addToCart(details.id)}>
+        <Button
+          className="bg-info"
+          onClick={() => addToCart(details.id, details.price)}
+        >
           Add To Cart
         </Button>
       </Link>

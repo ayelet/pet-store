@@ -16,8 +16,8 @@ export default function IndexPage() {
       <Route path="/" exact component={HomePage} />
       <Route path="/Contact" exact component={ContactPage} />
       <Route path="/About" exact component={AboutPage} />
-      <Route path="/Products/" component={ProductsPage} />
-      <Route path="/Products/id=:id" component={ProductDetail} />
+      <Route path="/Products/" exact component={ProductsPage} />
+      <Route path="/Products/id=:id" exact component={ProductDetail} />
       <Route path="/Cart" component={CartPage} />
       <Route path="/Calculator" component={NutritionCalculaotr} />
     </div>

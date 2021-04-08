@@ -6,3 +6,16 @@
   grid-gap: 40px;
   margin: 10px auto;
 }
+
+.products-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.prev-page,
+.next-page {
+  height: 50px;
+  margin: auto;
+}
