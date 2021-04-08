@@ -1,6 +1,6 @@
 import "./product.css";
 import "../App.css";
-import Cart from "../Cart/Cart";
+import Cart from "../Cart/CartDB";
 
 import React from "react";
 import { useState } from "react";

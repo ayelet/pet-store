@@ -18,4 +18,5 @@
 .next-page {
   height: 50px;
   margin: auto;
+  outline: none;
 }

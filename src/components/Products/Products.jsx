@@ -5,7 +5,7 @@ import React, { useState, useEffect } from "react";
 import ProductCard from "../Product/ProductCard";
 // import Pagination from "../Paginationa/Pagination";
 import axios from "axios";
-// import Cart from "../Cart/Cart";
+// import Cart from "../Cart/CartDB";
 // import CartContext from "../CartContext/CartContext";
 
 export default function Products() {

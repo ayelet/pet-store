@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-// import Cart from "../Cart/Cart";
-// import Cart from "../Cart/Cart";
+// import Cart from "../Cart/CartDB";
 export const CartContext = React.createContext([]);
 
 export const CartProvider = (props) => {

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 // import { useContext } from "react";
 // import { CartContext } from "../CartContext/CartContext";
-import Cart from "./Cart";
+import Cart from "./CartDB";
 import CartItem from "./CartItem/CartItem";
 
 export default function CartPage() {
