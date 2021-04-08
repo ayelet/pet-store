@@ -11,12 +11,12 @@ import axios from "axios";
 export default function Products() {
   const baseUrl = "https://606db7c4603ded001750472a.mockapi.io/Products";
 
-  const [products, setProducts] = useState(
-    localStorage.getItem("products") || []
-  );
+  // const [products, setProducts] = useState(
+  //   localStorage.getItem("products") || []
+  // );
+  const [products, setProducts] = useState([]);
   const [error, setError] = useState("");
 
-  // const [products] = useState(productsList);
   // const [filteredProducts] = useState(productsList);
   const [currentPage, setCurrentPage] = useState(1);
   // const [disablePrev, setDisablePrev] = useState(true);
@@ -28,23 +28,23 @@ export default function Products() {
 
   useEffect(() => {
     try {
-      if (
-        !localStorage.getItem("products") ||
-        localStorage.getItem("prodcuts") === "[]"
-      ) {
-        console.log("fetching from remote server");
-        axios.get(baseUrl).then((res) => {
-          console.log(res.data);
-          setProducts(res.data);
-          setCurrentProducts(products.slice(0, productsPerPage));
-          console.log("JSON", JSON.stringify(products));
-          localStorage.setItem("products", JSON.stringify(products));
-        });
-      } else {
-        console.log("fetching from local storage");
-        let storedProducts = localStorage.getItem("products");
-        setProducts(JSON.parse(storedProducts));
-      }
+      // if (
+      //   !localStorage.getItem("products") ||
+      //   localStorage.getItem("prodcuts") === "[]"
+      // ) {
+      console.log("fetching from remote server");
+      axios.get(baseUrl).then((res) => {
+        console.log(res.data);
+        setProducts(res.data);
+        setCurrentProducts(products.slice(0, productsPerPage));
+        console.log("JSON", JSON.stringify(products));
+        localStorage.setItem("products", JSON.stringify(products));
+      });
+      // } else {
+      //   console.log("fetching from local storage");
+      //   let storedProducts = localStorage.getItem("products");
+      //   setProducts(JSON.parse(storedProducts));
+      // }
     } catch (err) {
       setError(err);
       if (error.response) {
