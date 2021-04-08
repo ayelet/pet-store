@@ -5,7 +5,6 @@ import Cart from "../Cart/CartDB";
 import React from "react";
 import { useState } from "react";
 import { Button } from "react-bootstrap";
-// import { CartContext } from "../CartContext/CartContext";
 import { Link } from "react-router-dom";
 
 export default function ProductCard({ details, onAdd, onRemove }) {

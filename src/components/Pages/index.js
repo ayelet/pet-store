@@ -5,7 +5,6 @@ import ProductsPage from "./ProductsPage";
 import CartPage from "../Cart/CartPage";
 import AboutPage from "../About/AboutPage";
 import ContactPage from "../Contact/Contact";
-// import CartProvider from "../CartContext/CartContext";
 import HomePage from "./HomePage";
 import ProductDetail from "../Product/ProductDetail";
 import NutritionCalculaotr from "./NutritionCalculator/NutritionCalculaotr";
