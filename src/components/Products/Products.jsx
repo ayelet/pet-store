@@ -23,6 +23,8 @@ export default function Products() {
   // const [disableNext, setDisableNext] = useState(false);
   const [productsPerPage] = useState(3);
   const [currentProducts, setCurrentProducts] = useState([]);
+  const [firstProductIndex, setFirstProductIndex] = useState(0);
+  const [lastProductIndex, setLastProductIndex] = useState(3);
 
   // const [indexOfLastProd] = useState(currentPage * productsPerPage);
 
@@ -78,6 +80,8 @@ export default function Products() {
     const indexOfLastProd = currentPage * productsPerPage;
     const indexOfFirstProd = indexOfLastProd - productsPerPage;
     setCurrentProducts(products.slice(indexOfFirstProd, indexOfLastProd));
+    setFirstProductIndex(indexOfFirstProd);
+    setLastProductIndex(indexOfLastProd);
     console.log("calculating pages", currentProducts);
   };
 
@@ -117,16 +121,18 @@ export default function Products() {
       ></input>
       <div className="content">
         <div className="container text-center products">
-          {currentProducts.map((product) => {
-            return (
-              <ProductCard
-                key={product.id}
-                details={product}
-                onAdd={onAddProduct}
-                onRemove={onRemoveProduct}
-              />
-            );
-          })}
+          {products
+            .slice(firstProductIndex, lastProductIndex)
+            .map((product) => {
+              return (
+                <ProductCard
+                  key={product.id}
+                  details={product}
+                  onAdd={onAddProduct}
+                  onRemove={onRemoveProduct}
+                />
+              );
+            })}
         </div>
       </div>
       <input
